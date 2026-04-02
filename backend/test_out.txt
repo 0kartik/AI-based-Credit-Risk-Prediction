@@ -1,0 +1,54 @@
+--- Original cols in order ---
+person_age: 32
+person_income: 600000
+person_emp_length: 5
+loan_amnt: 25000
+loan_int_rate: 2
+loan_percent_income: 0.04166666
+cb_person_cred_hist_length: 8
+person_home_ownership_MORTGAGE: 0
+person_home_ownership_OWN: True
+person_home_ownership_RENT: 0
+loan_intent_DEBTCONSOLIDATION: 0
+loan_intent_EDUCATION: 0
+loan_intent_HOMEIMPROVEMENT: 0
+loan_intent_MEDICAL: 0
+loan_intent_PERSONAL: True
+loan_intent_VENTURE: 0
+loan_grade_A: 0
+loan_grade_B: 0
+loan_grade_C: 0
+loan_grade_D: 0
+loan_grade_E: 0
+loan_grade_F: 0
+cb_person_default_on_file_N: 0
+cb_person_default_on_file_Y: 0
+
+--- Scaled df ---
+person_age: -0.7974959373161424
+person_income: 20.033171989358433
+person_emp_length: -0.028593212095893383
+loan_amnt: 0.4084803104209355
+loan_int_rate: -2.1466635262607032
+loan_percent_income: -1.2940390004702227
+cb_person_cred_hist_length: -0.8879169237917781
+person_home_ownership_MORTGAGE: -0.49968748043699635
+person_home_ownership_OWN: 1.6905693394114378
+person_home_ownership_RENT: -1.0856561322411287
+loan_intent_DEBTCONSOLIDATION: -0.3940406351902631
+loan_intent_EDUCATION: -0.5955219872346192
+loan_intent_HOMEIMPROVEMENT: -0.3273751528441557
+loan_intent_MEDICAL: -0.4184353374296568
+loan_intent_PERSONAL: 2.003757753673387
+loan_intent_VENTURE: -0.43416052891537366
+loan_grade_A: -0.5822770807971399
+loan_grade_B: -0.5693439578786108
+loan_grade_C: -0.5053070101350161
+loan_grade_D: -0.41744486589713825
+loan_grade_E: -0.3337035804021864
+loan_grade_F: -0.22941573387056183
+cb_person_default_on_file_N: -2.338440784798783
+cb_person_default_on_file_Y: -0.427635374177776
+
+--- Prob ---
+0.8191865

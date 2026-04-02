@@ -1,0 +1,669 @@
+/* =========================================================================
+   Indian Banking Professional UI
+   Inspired by SBI / HDFC / ICICI — Navy + Saffron/Gold + White
+   ========================================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  /* Brand — Indian Banking Core */
+  --navy: #002b5c;
+  --navy-dark: #001d3d;
+  --navy-light: #003f7f;
+  --saffron: #e87722;
+  --saffron-dark: #cf6510;
+  --gold: #c9a74e;
+  --gold-light: #f5ecd3;
+
+  /* Surfaces */
+  --bg-page: #f2f4f7;
+  --bg-card: #ffffff;
+  --bg-input: #f8f9fb;
+
+  /* Text */
+  --text-dark: #1a1a2e;
+  --text-body: #374151;
+  --text-muted: #6b7280;
+  --text-light: #ffffff;
+
+  /* Semantic */
+  --green: #15803d;
+  --green-bg: #f0fdf4;
+  --red: #b91c1c;
+  --red-bg: #fef2f2;
+  --amber: #b45309;
+  --amber-bg: #fffbeb;
+  --blue: #1d4ed8;
+  --blue-bg: #eff6ff;
+
+  /* Borders & Shadows */
+  --border: #d1d5db;
+  --border-light: #e5e7eb;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.10);
+
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  --radius: 8px;
+  --radius-sm: 4px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font);
+  background: var(--bg-page);
+  color: var(--text-body);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+/* =========================================================================
+   Typography
+   ========================================================================= */
+h1 { font-size: 1.5rem; font-weight: 700; color: var(--text-light); }
+h2 { font-size: 1.35rem; font-weight: 700; color: var(--navy); }
+h3 { font-size: 1.05rem; font-weight: 600; color: var(--text-dark); }
+h4 { font-size: 0.95rem; font-weight: 600; color: var(--text-dark); }
+h5 { font-size: 0.85rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+
+.mt-2 { margin-top: 0.5rem; }
+.mt-3 { margin-top: 1rem; }
+.mt-4 { margin-top: 1.5rem; }
+.pt-4 { padding-top: 1.5rem; }
+.border-t { border-top: 1px solid var(--border-light); }
+.flex-col { display: flex; flex-direction: column; }
+.danger { color: var(--red); }
+.success { color: var(--green); }
+
+/* =========================================================================
+   Top Banner — Indian Bank Style (Navy + Saffron Stripe)
+   ========================================================================= */
+.bank-top-strip {
+  background: var(--saffron);
+  height: 4px;
+}
+
+.bank-header {
+  background: var(--navy);
+  padding: 0.9rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.bank-header-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.bank-logo {
+  width: 38px;
+  height: 38px;
+  background: var(--saffron);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--text-light);
+  flex-shrink: 0;
+}
+
+.bank-header h1 {
+  font-size: 1.1rem;
+  letter-spacing: -0.3px;
+  line-height: 1.3;
+}
+.bank-header h1 small {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 400;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.03em;
+  margin-top: 1px;
+}
+
+.bank-header-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* =========================================================================
+   Footer — RBI Style
+   ========================================================================= */
+.bank-footer {
+  background: var(--navy-dark);
+  color: rgba(255,255,255,0.6);
+  text-align: center;
+  padding: 1rem 2rem;
+  font-size: 0.72rem;
+  line-height: 1.6;
+  margin-top: auto;
+  letter-spacing: 0.02em;
+}
+.bank-footer strong { color: rgba(255,255,255,0.85); }
+.bank-footer .footer-divider {
+  width: 60px;
+  height: 2px;
+  background: var(--saffron);
+  margin: 0.5rem auto;
+  opacity: 0.6;
+}
+
+/* =========================================================================
+   Layout
+   ========================================================================= */
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-body {
+  flex: 1;
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+/* =========================================================================
+   Cards
+   ========================================================================= */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  padding: 1.75rem;
+  transition: box-shadow 0.2s;
+}
+.card:hover { box-shadow: var(--shadow-md); }
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--navy);
+}
+.card-header h3 { margin: 0; }
+.card-header-icon {
+  width: 30px;
+  height: 30px;
+  background: var(--navy);
+  color: var(--text-light);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.card-section {
+  margin-top: 1rem;
+}
+
+/* =========================================================================
+   Auth — Bank Login / Signup
+   ========================================================================= */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 65vh;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+}
+.auth-card h2 {
+  margin-bottom: 0.25rem;
+}
+.auth-card .auth-subtitle {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+
+.auth-secure-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--green-bg);
+  color: var(--green);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.3rem 0.75rem;
+  border-radius: 2rem;
+  border: 1px solid #bbf7d0;
+  margin-bottom: 1.25rem;
+}
+
+/* =========================================================================
+   Forms & Inputs
+   ========================================================================= */
+.auth-form, .credit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  text-align: left;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.input-group label {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+input, .modern-select {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  border-radius: var(--radius-sm);
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  color: var(--text-dark);
+  font-family: inherit;
+  font-size: 0.9rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+input:focus, .modern-select:focus {
+  outline: none;
+  border-color: var(--navy);
+  box-shadow: 0 0 0 3px rgba(0,43,92,0.1);
+  background: #fff;
+}
+input::placeholder { color: #9ca3af; }
+
+.modern-select {
+  appearance: none;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.85rem center;
+  background-size: 0.9em;
+}
+.modern-select option { background: #fff; color: var(--text-dark); }
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* =========================================================================
+   Buttons
+   ========================================================================= */
+button {
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  transition: all 0.18s;
+  border: none;
+  font-size: 0.9rem;
+}
+
+.primary-btn {
+  width: 100%;
+  padding: 0.75rem;
+  background: var(--navy);
+  color: var(--text-light);
+}
+.primary-btn:hover:not(:disabled) {
+  background: var(--navy-dark);
+  box-shadow: 0 2px 8px rgba(0,43,92,0.25);
+}
+.primary-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.accent-btn {
+  padding: 0.75rem 1.4rem;
+  background: var(--saffron);
+  color: var(--text-light);
+}
+.accent-btn:hover:not(:disabled) {
+  background: var(--saffron-dark);
+  box-shadow: 0 2px 8px rgba(232,119,34,0.3);
+}
+.accent-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.secondary-btn {
+  padding: 0.45rem 1rem;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.35);
+  color: rgba(255,255,255,0.85);
+  font-size: 0.8rem;
+}
+.secondary-btn:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.6);
+  color: #fff;
+}
+
+.predict-btn {
+  background: var(--saffron) !important;
+  color: var(--text-light) !important;
+}
+.predict-btn:hover:not(:disabled) {
+  background: var(--saffron-dark) !important;
+}
+
+/* =========================================================================
+   Dashboard Layouts
+   ========================================================================= */
+.dashboard-container {
+  width: 100%;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--navy);
+}
+.dashboard-header h2 { margin: 0; }
+.dashboard-header p { color: var(--text-muted); font-size: 0.82rem; margin-top: 0.15rem; }
+
+.dashboard-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+@media (min-width: 900px) {
+  .dashboard-layout { grid-template-columns: 1.6fr 1fr; }
+}
+
+/* =========================================================================
+   Metric Cards (Admin Accuracy)
+   ========================================================================= */
+.model-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.metric-card {
+  background: var(--bg-input);
+  padding: 1.25rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  text-align: center;
+  transition: box-shadow 0.2s;
+}
+.metric-card:hover { box-shadow: var(--shadow-md); }
+.metric-card h5 { margin-bottom: 0.4rem; }
+.metric-card .score {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+.metric-card.highlight {
+  border-color: var(--saffron);
+  background: #fff7ed;
+  box-shadow: 0 0 0 3px rgba(232,119,34,0.1);
+}
+
+/* =========================================================================
+   Accuracy Bar
+   ========================================================================= */
+.accuracy-bar-wrap {
+  width: 100%;
+  height: 6px;
+  background: var(--border-light);
+  border-radius: 3px;
+  margin: 0.6rem 0;
+  overflow: hidden;
+}
+.accuracy-bar-fill { height: 100%; border-radius: 3px; }
+.accuracy-label {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* =========================================================================
+   Step Badges
+   ========================================================================= */
+.step-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.25rem;
+}
+.step-badge {
+  display: inline-block;
+  padding: 0.18rem 0.65rem;
+  border-radius: 2rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: #e8edf3;
+  color: var(--navy);
+  border: 1px solid #c3d1e1;
+}
+.success-badge {
+  background: var(--green-bg);
+  color: var(--green);
+  border-color: #bbf7d0;
+}
+
+/* =========================================================================
+   File Input
+   ========================================================================= */
+.custom-file-label {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+  cursor: pointer;
+}
+.file-btn {
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--navy);
+  font-weight: 600;
+  font-size: 0.82rem;
+  transition: all 0.18s;
+}
+.file-btn:hover { background: var(--bg-input); border-color: var(--navy); }
+.file-name { color: var(--text-muted); font-size: 0.82rem; }
+
+.dimmed { opacity: 0.4; pointer-events: none; filter: grayscale(0.6); }
+
+/* =========================================================================
+   Gauge / Results (Credit Assessment Report)
+   ========================================================================= */
+.results-container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.gauge-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem 0;
+}
+
+.gauge-wrapper {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.8s ease-out;
+}
+
+.gauge-inner {
+  width: 140px;
+  height: 140px;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.gauge-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+.gauge-label {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.prediction-label {
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.verdict-sub {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  max-width: 300px;
+  margin: 0.4rem auto 0;
+}
+
+/* =========================================================================
+   Risk Factor Cards
+   ========================================================================= */
+.risk-factors-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.risk-factor-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background: var(--bg-input);
+  border: 1px solid var(--border-light);
+  border-left: 4px solid;
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 0.9rem;
+  text-align: left;
+  animation: slideUp 0.3s ease-out;
+}
+.risk-factor-icon { font-size: 1rem; flex-shrink: 0; margin-top: 0.05rem; }
+.risk-factor-body { display: flex; flex-direction: column; gap: 0.2rem; }
+.risk-factor-tag {
+  display: inline-block;
+  padding: 0.1rem 0.5rem;
+  border-radius: 1rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  align-self: flex-start;
+}
+.risk-factor-text {
+  color: var(--text-body);
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+/* =========================================================================
+   Empty State
+   ========================================================================= */
+.empty-results {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--text-muted);
+  padding: 3rem 1rem;
+}
+.pulse-icon {
+  font-size: 3rem;
+  margin-bottom: 0.75rem;
+  opacity: 0.3;
+  animation: pulse 2.5s infinite;
+}
+
+/* =========================================================================
+   Status Banners
+   ========================================================================= */
+.status-banner { padding: 0.75rem 1rem; border-radius: var(--radius-sm); font-size: 0.85rem; }
+.status-info    { background: var(--blue-bg); color: var(--blue); border: 1px solid #bfdbfe; }
+.status-success { background: var(--green-bg); color: var(--green); border: 1px solid #bbf7d0; }
+.status-error   { background: var(--red-bg); color: var(--red); border: 1px solid #fecaca; }
+
+.error-message {
+  background: var(--red-bg);
+  color: var(--red);
+  padding: 0.65rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid #fecaca;
+  font-size: 0.82rem;
+  margin-bottom: 0.5rem;
+}
+
+/* =========================================================================
+   Links & Auth Misc
+   ========================================================================= */
+.auth-link { margin-top: 1.25rem; text-align: center; font-size: 0.82rem; }
+.auth-link a { color: var(--navy); text-decoration: none; font-weight: 600; }
+.auth-link a:hover { text-decoration: underline; color: var(--saffron); }
+
+/* =========================================================================
+   Animations
+   ========================================================================= */
+@keyframes pulse {
+  0% { transform: scale(0.95); opacity: 0.3; }
+  50% { transform: scale(1.03); opacity: 0.55; }
+  100% { transform: scale(0.95); opacity: 0.3; }
+}
+.slide-up { animation: slideUp 0.35s ease-out; }
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================================================
+   Responsive
+   ========================================================================= */
+@media (max-width: 600px) {
+  .bank-header { padding: 0.75rem 1rem; }
+  .bank-header h1 { font-size: 0.9rem; }
+  .app-body { padding: 1rem; }
+  .card { padding: 1.25rem; }
+  .form-grid { grid-template-columns: 1fr; }
+}
