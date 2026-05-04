@@ -6,7 +6,6 @@
 ![XGBoost](https://img.shields.io/badge/XGBoost-latest-red?style=for-the-badge)
 ![SQLite](https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite)
 ![JWT](https://img.shields.io/badge/JWT-Auth-purple?style=for-the-badge)
-![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
 > A production-ready REST API that predicts loan default risk using an ensemble of machine learning models — Logistic Regression, Random Forest, and XGBoost — with role-based authentication, persistent report history, and interpretable risk factor extraction.
 
@@ -624,12 +623,6 @@ A: It provides flexibility — if the feature set changes (new columns added), o
 - Probability of default: **81.9%** → `High Risk`
 
 **Why?** Despite the high income, the model detects patterns in the combined feature vector — particularly the unusual interest rate (2%, far below market) combined with the specific loan structure — that correlate with high-risk profiles in the training data. This demonstrates XGBoost's ability to detect non-linear interactions that simpler models might miss.
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License. See `LICENSE` for details.
 
 ---
 
